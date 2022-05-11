@@ -9,4 +9,7 @@ def create_app():
     app.add_url_rule('/login', 'login', login, methods=['GET'])
     app.add_url_rule('/register', 'register', register, methods=['GET'])
     app.register_error_handler(404, page_not_found)
+
+
+    app.add_url_rule('/test', 'test', test, methods=['GET'])
     return app

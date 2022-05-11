@@ -7,3 +7,15 @@ import sqlalchemy
 def index():
     
     return render_template('index.html')
+
+
+def login():
+    
+    return render_template('/auth/login.html')
+
+def register():
+    
+    return render_template('/auth/register.html')
+
+def page_not_found(e):
+    return render_template('/error/404.html'), 404

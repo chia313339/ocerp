@@ -1,6 +1,6 @@
 <nav class="sidebar">
     <div class="sidebar-header">
-        <a href="#" class="sidebar-brand">
+        <a href="{{url_for('index')}}" class="sidebar-brand">
         OC Nail<span> Studio</span>
         </a>
         <div class="sidebar-toggler not-active">
@@ -12,11 +12,28 @@
     <div class="sidebar-body">
         <ul class="nav">
         <li class="nav-item nav-category">Main</li>
-        <li class="nav-item">
-            <a href="dashboard.html" class="nav-link">
+        <li class="nav-item {{ 'active' if active_page == 'index' else '' }}">
+            <a href="{{url_for('index')}}" class="nav-link">
             <i class="link-icon" data-feather="box"></i>
             <span class="link-title">Dashboard</span>
             </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
+            <i class="link-icon" data-feather="unlock"></i>
+            <span class="link-title">Authentication</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+            </a>
+            <div class="collapse" id="authPages">
+            <ul class="nav sub-menu">
+                <li class="nav-item">
+                <a href="{{url_for('login')}}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                <a href="{{url_for('register')}}" class="nav-link">Register</a>
+                </li>
+            </ul>
+            </div>
         </li>
         <li class="nav-item nav-category">web apps</li>
         <li class="nav-item">
